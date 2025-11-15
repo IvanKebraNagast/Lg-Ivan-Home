@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG IVAN HOME</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script defer src="main.js"></script>
+    <script defer src="voice.js"></script>
+    <script defer src="tv.js"></script>
+    <script defer src="fan.js"></script>
+    <script defer src="tuya.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- DOMOVSKÁ OBRAZOVKA -->
+        <div id="home" class="screen active">
+            <h1 class="title">LG IVAN HOME</h1>
+
+            <div class="menu-grid">
+
+                <button class="menu-btn" onclick="openScreen('tv')">
+                    📺 TV Remote
+                </button>
+
+                <button class="menu-btn" onclick="openScreen('fan')">
+                    🌀 Ventilátor HUD
+                </button>
+
+                <button class="menu-btn" onclick="openScreen('tuya')">
+                    💡 Tuya Smart Home
+                </button>
+            </div>
+
+            <button class="voice-main" onclick="startVoice()">
+                🎤 Hovoriť
+            </button>
+        </div>
+
+        <!-- TV OVLÁDAČ -->
+        <div id="tv" class="screen">
+            <h2 class="subtitle">📺 TV Ovládač</h2>
+            <div id="tvRemoteContainer"></div>
+            <button class="back-btn" onclick="openScreen('home')">⬅ Späť</button>
+        </div>
+
+        <!-- VENTILÁTOR HUD -->
+        <div id="fan" class="screen">
+            <h2 class="subtitle">🌀 Ventilátor HUD</h2>
+            <div id="fanHUDContainer"></div>
+            <button class="back-btn" onclick="openScreen('home')">⬅ Späť</button>
+        </div>
+
+        <!-- TUYA ZARIADENIA -->
+        <div id="tuya" class="screen">
+            <h2 class="subtitle">💡 Tuya Smart Home</h2>
+            <div id="tuyaDevicesContainer"></div>
+            <button class="back-btn" onclick="openScreen('home')">⬅ Späť</button>
+        </div>
+
+    </div>
+</body>
+</html>
